@@ -35,9 +35,13 @@ def calcula_pontos_soma(dados_rolados):
 
 def calcula_pontos_sequencia_baixa(dados):
     j = 0
+    menor = 1000000
     for i in range(len(dados)):
-        if dados[i]+1 in dados:
-            j += 1
+        if dados[i] < menor:
+            menor = dados[i]
+    for i in range(1,7):
+        if menor+i in dados:
+            j +=1
         else:
             j = 0
     if j >= 4:
