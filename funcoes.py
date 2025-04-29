@@ -11,5 +11,5 @@ def guardar_dado(dados_rolados, dados_guardados, numero):
     for i in range(len(dados_rolados)):
         if i != numero:
             nova.append(dados_rolados[i])
-    return nova, dados_guardados
+    return [nova, dados_guardados]
 
