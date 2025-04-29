@@ -70,6 +70,17 @@ def calcula_pontos_sequencia_alta(dados):
         return 30
     else:
         return 0
+    
+def calcula_pontos_full_house(dados):
+    soma=0
+    dicio={1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+    for i in range(len(dados)):
+        dicio[dados[i]] += 1
+    if 2 in dicio.values() and 3 in dicio.values():
+        for i in range(len(dados)):
+            soma += dados[i]
+    return soma
+
 
 
       
