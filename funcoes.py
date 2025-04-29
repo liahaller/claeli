@@ -40,7 +40,7 @@ def calcula_pontos_sequencia_baixa(dados):
     for i in range(len(dados)):
         if dados[i] not in lista:
             lista.append(dados[i])
-    for i in range(len(lista)):
+    for i in range(len(lista)-1):
         if lista[i]+1 in lista:
             j += 1
         else:
