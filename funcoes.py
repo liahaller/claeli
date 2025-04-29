@@ -23,32 +23,11 @@ def remover_dado(dados_rolados,dados_guardados,numero):
 
 def calcula_pontos_regra_simples(dados):
     dicio={}
-    soma1=0
-    soma2=0
-    soma3=0
-    soma4=0
-    soma5=0
-    soma6=0
     for i in range(len(dados)):
-        if dados[i]==1:
-            soma1+=dados[i]
-        elif dados[i]==2:
-            soma2+=dados[i]
-        elif dados[i]==3:
-            soma3+=dados[i]
-        elif dados[i]==4:
-            soma4+=dados[i]
-        elif dados[i]==5:
-            soma5+=dados[i]
-        elif dados[i]==6:
-            soma6+=dados[i]
-    dicio[1]= soma1
-    dicio[2]= soma2
-    dicio[3]= soma3
-    dicio[4]= soma4
-    dicio[5]= soma5
-    dicio[6]= soma6
-
+        if dados[i] in dicio:
+            dicio[dados[i]] += dados[i]
+        else:
+            dicio[dados[i]] = dados[i]
     return dicio
 
       
