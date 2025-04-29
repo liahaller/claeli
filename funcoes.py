@@ -36,8 +36,12 @@ def calcula_pontos_soma(dados_rolados):
 def calcula_pontos_sequencia_baixa(dados):
     j = 1
     dados = sorted(dados)
+    lista=[]
     for i in range(len(dados)):
-        if dados[i]-1 in dados:
+        if dados[i] not in lista:
+            lista.append(dados[i])
+    for i in range(len(lista)):
+        if lista[i]+1 in lista:
             j += 1
         else:
             j = 1
