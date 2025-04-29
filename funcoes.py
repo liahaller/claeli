@@ -40,7 +40,7 @@ def calcula_pontos_sequencia_baixa(dados):
             j += 1
         else:
             j = 0
-    if j == 4:
+    if j >= 4:
         return 15
     else:
         return 0 
