@@ -22,7 +22,7 @@ def remover_dado(dados_rolados,dados_guardados,numero):
     return[dados_rolados,dados_guardados_novo]
 
 def calcula_pontos_regra_simples(dados):
-    dicio=[]
+    dicio={}
     soma1=0
     soma2=0
     soma3=0
