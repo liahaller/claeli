@@ -81,6 +81,17 @@ def calcula_pontos_full_house(dados):
             soma += dados[i]
     return soma
 
+def calcula_pontos_quadra(dados):
+    soma=0
+    dicio={1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+    for i in range(len(dados)):
+        dicio[dados[i]] += 1
+    for ocorrencias in dicio.values():
+        if ocorrencias >= 4:
+            for i in range(len(dados)):
+                soma += dados[i]
+    return soma
+
 
 
       
