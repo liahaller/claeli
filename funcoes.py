@@ -34,13 +34,13 @@ def calcula_pontos_soma(dados_rolados):
     return soma
 
 def calcula_pontos_sequencia_baixa(dados):
-    j = 0
+    j = 1
     dados = sorted(dados)
     for i in range(len(dados)):
         if dados[i]-1 in dados:
             j += 1
         else:
-            j = 0
+            j = 1
     if j >= 4:
         return 15
     else:
