@@ -22,12 +22,9 @@ def remover_dado(dados_rolados,dados_guardados,numero):
     return[dados_rolados,dados_guardados_novo]
 
 def calcula_pontos_regra_simples(dados):
-    dicio={}
+    dicio={1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
     for i in range(len(dados)):
-        if dados[i] in dicio:
             dicio[dados[i]] += dados[i]
-        else:
-            dicio[dados[i]] = dados[i]
     return dicio
 
       
