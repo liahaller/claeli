@@ -90,6 +90,7 @@ def calcula_pontos_quadra(dados):
         if ocorrencias >= 4:
             for i in range(len(dados)):
                 soma += dados[i]
+            break
     return soma
 
 
