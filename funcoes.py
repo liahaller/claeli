@@ -27,4 +27,9 @@ def calcula_pontos_regra_simples(dados):
         dicio[dados[i]] += dados[i]
     return dicio
 
+def calcula_pontos_soma(dados_rolados):
+    soma = 0
+    for i in range(len(dados_rolados)):
+        soma += dados_rolados[i]
+    return soma
       
