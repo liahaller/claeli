@@ -93,6 +93,15 @@ def calcula_pontos_quadra(dados):
             break
     return soma
 
+def calcula_pontos_quina(dados):
+    dicio={1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+    for i in range(len(dados)):
+        dicio[dados[i]] += 1
+    for ocorrencias in dicio.values():
+        if ocorrencias >= 5:
+            return 50
+    return 0
+
 
 
       
