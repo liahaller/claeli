@@ -106,5 +106,15 @@ def calcula_pontos_regra_avancada(dados):
     dicio = {'cinco_iguais': calcula_pontos_quina(dados), 'full_house': calcula_pontos_full_house(dados), 'quadra': calcula_pontos_quadra(dados), 'sem_combinacao': calcula_pontos_soma(dados), 'sequencia_alta': calcula_pontos_sequencia_alta(dados), 'sequencia_baixa': calcula_pontos_sequencia_baixa(dados)}
     return dicio
 
+def faz_jogada(dados, categoria, cartela_de_pontos):
+    regra=0
+    if categoria not in cartela_de_pontos['regra_avancada']:
+        categoria= int(categoria)
+    for tipo in cartela_de_pontos.keys():
+        if categoria in tipo:
+            regra=tipo
+    if regra=='regra_avancada':
+        cartela_de_pontos[regra][categoria]= calcula_pontos_regra_simples(dados)[categoria]
+    return cartela_de_pontos
 
       
