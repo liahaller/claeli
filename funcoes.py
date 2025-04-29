@@ -50,7 +50,26 @@ def calcula_pontos_sequencia_baixa(dados):
     if j >= 4:
         return 15
     else:
-        return 0 
+        return 0
+    
+def calcula_pontos_sequencia_alta(dados):
+    j = 1
+    dados = sorted(dados)
+    lista=[]
+    for i in range(len(dados)):
+        if dados[i] not in lista:
+            lista.append(dados[i])
+    for i in range(len(lista)-1):
+        if lista[i]+1 in lista:
+            j += 1
+        if j >= 5:
+            break
+        if lista[i]+1 not in lista:
+            j = 1
+    if j >= 5:
+        return 30
+    else:
+        return 0
 
 
       
