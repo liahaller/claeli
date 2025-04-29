@@ -43,7 +43,9 @@ def calcula_pontos_sequencia_baixa(dados):
     for i in range(len(lista)-1):
         if lista[i]+1 in lista:
             j += 1
-        else:
+        if j >= 4:
+            break
+        if lista[i]+1 not in lista:
             j = 1
     if j >= 4:
         return 15
