@@ -29,6 +29,7 @@ dados_rolados = rolar_dados(5)
 dados_guardados = []
 jogando = 'sim'
 
+print(imprime_cartela(cartela_de_pontos))
 print("Dados rolados:", dados_rolados)
 print("Dados guardados:", dados_guardados)
 escolha= int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
