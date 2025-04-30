@@ -28,7 +28,7 @@ rerrolagens = 0
 dados_rolados = rolar_dados(5)
 dados_guardados = []
 
-print(imprime_cartela(cartela_de_pontos))
+imprime_cartela(cartela_de_pontos)
 print(f'Dados rolados: {dados_rolados}')
 print(f'Dados guardados: {dados_guardados}')
 escolha= input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
