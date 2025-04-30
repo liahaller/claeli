@@ -42,29 +42,13 @@ while rodadas<12:
         escolha= int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
 
         if escolha == '1':
-            if len(dados_rolados) != 0:
-                indice = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
-                if indice in ['0', '1', '2', '3', '4']:
-                    if indice < len(dados_rolados):
-                        dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
-                    else:
-                        print("Índice inválido.")
-                else:
-                    print("Entrada inválida.")
-            else:
-                print("Não há dados para guardar.")
+            indice = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
+            dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
+
         elif escolha == '2':
-            if len(dados_guardados) != 0:
-                indice= int(input("Digite o índice do dado a ser removido (0 a 4):"))
-                if indice in ['0', '1', '2', '3', '4']:
-                    if indice < len(dados_guardados):
-                        dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
-                    else:
-                        print("Índice inválido.")
-                else:
-                    print("Entrada inválida.")
-            else:
-                print("Não há dados guardados para remover.")
+            indice= int(input("Digite o índice do dado a ser removido (0 a 4):"))
+            dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
+        
         elif escolha == '3':
             if rerrolagens < 2:
                 rerrolagens = rerrolagens + 1
