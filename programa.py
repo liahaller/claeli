@@ -50,16 +50,18 @@ while rodadas<12:
         for i in range(len(dados_rolados)):
             dados_totais.append(dados_rolados[i])
         combinacao= input("Digite a combinação desejada:")
-        if combinacao in cartela_de_pontos.values():
-            for tipo in cartela_de_pontos.keys():
-                if combinacao in tipo:
-                    regra = tipo
-            if cartela_de_pontos[regra][combinacao] == -1:
-                cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
-                rodada+=1
-            else:
-                print("Essa combinação já foi utilizada.")
+        achou = 0
+        for tipo in cartela_de_pontos.keys():
+            if combinacao in cartela_de_pontos[tipo]:
+                regra = tipo
+                achou += 1
+        if cartela_de_pontos[regra][combinacao] == -1:
+            cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
+            rodadas+=1
+            rerrolagens = 0
         else:
+            print("Essa combinação já foi utilizada.")
+        if achou == 0:
             print("Combinação inválida. Tente novamente.")
                 
     else:
