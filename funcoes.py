@@ -108,13 +108,15 @@ def calcula_pontos_regra_avancada(dados):
 
 def faz_jogada(dados, categoria, cartela_de_pontos):
     regra=0
+    if len(categoria) == 1:
+        categoria = int(categoria)
     for tipo in cartela_de_pontos.keys():
-        if categoria in cartela_de_pontos[tipo] or int(categoria) in cartela_de_pontos[tipo]:
+        if categoria in cartela_de_pontos[tipo]:
             regra=tipo
     if regra=='regra_avancada':
         cartela_de_pontos[regra][categoria]= calcula_pontos_regra_avancada(dados)[categoria]
     elif regra == 'regra_simples':
-        cartela_de_pontos[regra][int(categoria)]= calcula_pontos_regra_simples(dados)[int(categoria)]
+        cartela_de_pontos[regra][categoria]= calcula_pontos_regra_simples(dados)[categoria]
     return cartela_de_pontos
 
       
