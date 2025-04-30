@@ -42,11 +42,11 @@ while rodadas<12:
         escolha= input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
 
         if escolha == '1':
-            indice = input("Digite o índice do dado a ser guardado (0 a 4):")
+            indice = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
             dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
 
         elif escolha == '2':
-            indice= input("Digite o índice do dado a ser removido (0 a 4):")
+            indice= int(input("Digite o índice do dado a ser removido (0 a 4):"))
             dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
         
         elif escolha == '3':
@@ -57,8 +57,11 @@ while rodadas<12:
                 print("Você já usou todas as rerrolagens.")
         elif escolha == '4':
             imprime_cartela(cartela_de_pontos)
-        elif escolha == 0:
-            dados_totais = dados_guardados + dados_rolados
+        elif escolha == '0':
+            dados_totais = []
+            for i in range(len(dados_guardados)):
+                dados_totais.append(dados_guardados[i])
+                dados_totais.append(dados_rolados[i])
             combinacao= input("Digite a combinação desejada:")
             achou = 0
             for tipo in cartela_de_pontos:
@@ -71,8 +74,8 @@ while rodadas<12:
                     achou = achou + 1
                 if achou == 0:
                     print("Combinação inválida. Tente novamente.")
-                else:
-                    print("Opção inválida. Tente novamente.")
+        else:
+            print("Opção inválida. Tente novamente.")
             jogando = 'nao'
 
 
