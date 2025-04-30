@@ -44,12 +44,8 @@ while rodadas<12:
     elif escolha == 4:
         imprime_cartela(cartela_de_pontos)
     elif escolha == 0:
-        regra = 0
-        dados_totais = []
-        for i in range(len(dados_guardados)):
-            dados_totais.append(dados_guardados[i])
-        for i in range(len(dados_rolados)):
-            dados_totais.append(dados_rolados[i])
+        regra = None
+        dados_totais = dados_guardados + dados_rolados
         combinacao= input("Digite a combinação desejada:")
         achou = 0
         
@@ -57,14 +53,15 @@ while rodadas<12:
             if combinacao in cartela_de_pontos[tipo]:
                 regra = tipo
                 achou += 1
+                break
         if achou != 0:
             if cartela_de_pontos[regra][combinacao] == -1:
                 cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
                 rodadas+=1
                 rerrolagens = 0
+            else:
+                print("Essa combinação já foi utilizada.")
         else:
-            print("Essa combinação já foi utilizada.")
-        if achou == 0:
             print("Combinação inválida. Tente novamente.")
                 
     else:
