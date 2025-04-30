@@ -19,9 +19,7 @@ dados_rolados = rolar_dados(5)
 dados_guardados = []
 
 imprime_cartela(cartela_de_pontos)
-print(f'Dados rolados: {dados_rolados}')
-print(f'Dados guardados: {dados_guardados}')
-escolha= int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
+
 rodadas=0
 
 while rodadas<12:
@@ -49,6 +47,7 @@ while rodadas<12:
         dados_totais = []
         for i in range(len(dados_guardados)):
             dados_totais.append(dados_guardados[i])
+        for i in range(len(dados_rolados)):
             dados_totais.append(dados_rolados[i])
         combinacao= input("Digite a combinação desejada:")
         if combinacao in cartela_de_pontos.values():
