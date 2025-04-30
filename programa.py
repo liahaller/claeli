@@ -52,8 +52,7 @@ while rodadas<12:
             dados_totais.append(dados_rolados[i])
         combinacao= input("Digite a combinação desejada:")
         achou = 0
-        if len(combinacao) == 1:
-            combinacao = int(combinacao)
+        
         for tipo in cartela_de_pontos.keys():
             if combinacao in cartela_de_pontos[tipo]:
                 regra = tipo
