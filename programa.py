@@ -12,6 +12,18 @@ from funcoes import calcula_pontos_regra_avancada
 from funcoes import faz_jogada
 from funcoes import imprime_cartela
 
+cartela_de_pontos = {
+    'regra_simples': {1:-1, 2:-1, 3:-1, 4:-1, 5:-1, 6:-1},
+    'regra_avancada': {
+        'full_house':-1, 
+        'quadra':-1, 
+        'cinco_iguais':-1,
+        'sequencia_baixa':-1,
+        'sequencia_alta':-1, 
+        'sem_combinacao':-1
+    }
+}
+
 rerrolagens = 0
 dados_rolados = rolar_dados(5)
 dados_guardados = []
@@ -20,7 +32,6 @@ jogando = 'sim'
 print("Dados rolados:", dados_rolados)
 print("Dados guardados:", dados_guardados)
 escolha= int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
-
 
 while jogando == 'sim':
     print("Dados rolados:", dados_rolados)
@@ -78,13 +89,13 @@ while jogando == 'sim':
 
 soma_simples = 0
 soma_total = 0
-for v in cartela_de_pontos['regra_simples'].values():
-    if v != -1:
-        soma_simples = soma_simples + v
-        soma_total = soma_total + v
-for v in cartela_de_pontos['regra_avancada'].values():
-    if v != -1:
-        soma_total = soma_total + v
+for i in cartela_de_pontos['regra_simples'].values():
+    if i != -1:
+        soma_simples = soma_simples + i
+        soma_total = soma_total + i
+for i in cartela_de_pontos['regra_avancada'].values():
+    if i != -1:
+        soma_total = soma_total + i
 if soma_simples >= 63:
     soma_total = soma_total + 35
 
