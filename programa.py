@@ -48,10 +48,8 @@ while rodadas<12:
         dados_totais = dados_guardados + dados_rolados
         combinacao= input("Digite a combinação desejada:")
         achou = False
-        try:
+        if len(combinacao) == 1:
             combinacao = int(combinacao)
-        except ValueError:
-            pass 
         for tipo in cartela_de_pontos:
             if combinacao in cartela_de_pontos[tipo]:
                 regra = tipo
