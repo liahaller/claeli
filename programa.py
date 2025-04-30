@@ -66,7 +66,6 @@ while rodadas<12:
                     if cartela_de_pontos[tipo][combinacao] == -1:
                         cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
                         rodada+=1
-                        jogando = 'nao'
                     else:
                         print("Essa combinação já foi utilizada.")
                     achou = achou + 1
@@ -74,6 +73,7 @@ while rodadas<12:
                     print("Combinação inválida. Tente novamente.")
                 else:
                     print("Opção inválida. Tente novamente.")
+            jogando = 'nao'
 
 
 soma_simples = 0
