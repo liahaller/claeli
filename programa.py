@@ -94,13 +94,11 @@ while rodadas<12:
 
 soma_simples = 0
 soma_total = 0
-for i in cartela_de_pontos['regra_simples'].values():
-    if i != -1:
-        soma_simples = soma_simples + i
-        soma_total = soma_total + i
-for i in cartela_de_pontos['regra_avancada'].values():
-    if i != -1:
-        soma_total = soma_total + i
+for valor in cartela_de_pontos['regra_simples'].values():
+    soma_simples = soma_simples + valor
+    soma_total = soma_total + valor
+for valor in cartela_de_pontos['regra_avancada'].values():
+    soma_total = soma_total + valor
 if soma_simples >= 63:
     soma_total = soma_total + 35
 
