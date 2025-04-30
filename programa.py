@@ -12,17 +12,7 @@ from funcoes import calcula_pontos_regra_avancada
 from funcoes import faz_jogada
 from funcoes import imprime_cartela
 
-cartela_de_pontos = {
-    'regra_simples': {1:-1, 2:-1, 3:-1, 4:-1, 5:-1, 6:-1},
-    'regra_avancada': {
-        'full_house':-1, 
-        'quadra':-1, 
-        'cinco_iguais':-1,
-        'sequencia_baixa':-1,
-        'sequencia_alta':-1, 
-        'sem_combinacao':-1
-    }
-}
+cartela_de_pontos = {'regra_simples': {1:-1, 2:-1, 3:-1, 4:-1, 5:-1, 6:-1},'regra_avancada': {'full_house':-1,'quadra':-1,'cinco_iguais':-1,'sequencia_baixa':-1,'sequencia_alta':-1,'sem_combinacao':-1}}
 
 rerrolagens = 0
 dados_rolados = rolar_dados(5)
@@ -61,17 +51,18 @@ while rodadas<12:
             dados_totais.append(dados_guardados[i])
             dados_totais.append(dados_rolados[i])
         combinacao= input("Digite a combinação desejada:")
-        achou = 0
-        for tipo in cartela_de_pontos:
-            if combinacao in cartela_de_pontos[tipo]:
-                if cartela_de_pontos[tipo][combinacao] == -1:
-                    cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
-                    rodada+=1
-                else:
-                    print("Essa combinação já foi utilizada.")
-                achou = achou + 1
-            if achou == 0:
-                print("Combinação inválida. Tente novamente.")
+        if combinacao in cartela_de_pontos.values():
+            for tipo in cartela_de_pontos.keys():
+                if combinacao in tipo:
+                    regra = tipo
+            if cartela_de_pontos[regra][combinacao] == -1:
+                cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
+                rodada+=1
+            else:
+                print("Essa combinação já foi utilizada.")
+        else:
+            print("Combinação inválida. Tente novamente.")
+                
     else:
         print("Opção inválida. Tente novamente.")
             
