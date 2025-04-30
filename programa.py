@@ -30,13 +30,13 @@ dados_guardados = []
 jogando = 'sim'
 
 print(imprime_cartela(cartela_de_pontos))
-print("Dados rolados:", dados_rolados)
-print("Dados guardados:", dados_guardados)
+print("Dados rolados:" dados_rolados)
+print("Dados guardados:" dados_guardados)
 escolha= int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
 
 while jogando == 'sim':
-    print("Dados rolados:", dados_rolados)
-    print("Dados guardados:", dados_guardados)
+    print("Dados rolados:" dados_rolados)
+    print("Dados guardados:" dados_guardados)
     escolha= int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
 
     if escolha == '1':
@@ -101,4 +101,4 @@ if soma_simples >= 63:
     soma_total = soma_total + 35
 
 imprime_cartela(cartela_de_pontos)
-print("Pontuação total:", soma_total)
+print("Pontuação total:" soma_total)
