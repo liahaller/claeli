@@ -30,23 +30,23 @@ dados_guardados = []
 jogando = 'sim'
 
 print(imprime_cartela(cartela_de_pontos))
-print("Dados rolados:" dados_rolados)
-print("Dados guardados:" dados_guardados)
-escolha= int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
+print(f'Dados rolados: {dados_rolados}')
+print(f'Dados guardados: {dados_guardados}')
+escolha= input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
 rodadas=0
 
 while rodadas<12:
     while jogando == 'sim':
-        print("Dados rolados:" dados_rolados)
-        print("Dados guardados:" dados_guardados)
-        escolha= int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
+        print(f'Dados rolados: {dados_rolados}')
+        print(f'Dados guardados: {dados_guardados}')
+        escolha= input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
 
         if escolha == '1':
-            indice = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
+            indice = input("Digite o índice do dado a ser guardado (0 a 4):")
             dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
 
         elif escolha == '2':
-            indice= int(input("Digite o índice do dado a ser removido (0 a 4):"))
+            indice= input("Digite o índice do dado a ser removido (0 a 4):")
             dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
         
         elif escolha == '3':
@@ -57,7 +57,7 @@ while rodadas<12:
                 print("Você já usou todas as rerrolagens.")
         elif escolha == '4':
             imprime_cartela(cartela_de_pontos)
-        elif escolha == '0':
+        elif escolha == 0:
             dados_totais = dados_guardados + dados_rolados
             combinacao= input("Digite a combinação desejada:")
             achou = 0
@@ -87,4 +87,4 @@ if soma_simples >= 63:
     soma_total = soma_total + 35
 
 imprime_cartela(cartela_de_pontos)
-print("Pontuação total:" soma_total)
+print(f'Pontuação total: {soma_total}')
