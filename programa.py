@@ -62,8 +62,6 @@ while rodadas<12:
         elif cartela_de_pontos[regra][combinacao] != -1:
             print("Essa combinação já foi utilizada.")
         else:
-            if isinstance(combinacao,int):
-                combinacao = str(combinacao)
             cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
             rodadas+=1
             rerrolagens = 0
