@@ -44,6 +44,7 @@ while rodadas<12:
     elif escolha == 4:
         imprime_cartela(cartela_de_pontos)
     elif escolha == 0:
+        regra = None
         dados_totais = []
         for i in range(len(dados_guardados)):
             dados_totais.append(dados_guardados[i])
