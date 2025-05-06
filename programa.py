@@ -94,7 +94,6 @@ while rodadas<12:
         dados_guardados = []            
     else:
         print("Opção inválida. Tente novamente.")
-        
             
 
 
