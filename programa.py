@@ -28,14 +28,8 @@ while rodadas<12:
     print(f'Dados guardados: {dados_guardados}')
     print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
     escolha = input()
-    if escolha.isdigit():
-        escolha = int(escolha)
-    else:
-        print("Opção inválida. Tente novamente.")
-        input()
-        
 
-    if escolha == 1:
+    if escolha == '1':
         print("Digite o índice do dado a ser guardado (0 a 4):")
         indice = input()
         if indice.isdigit():
@@ -45,7 +39,7 @@ while rodadas<12:
         if 0 <= indice < len(dados_rolados):
             dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
 
-    elif escolha == 2:
+    elif escolha == '2':
         print("Digite o índice do dado a ser removido (0 a 4):")
         indice = input()
         if indice.isdigit():
@@ -55,13 +49,13 @@ while rodadas<12:
         if 0 <= indice < len(dados_guardados):
             dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
         
-    elif escolha == 3:
+    elif escolha == '3':
         if rerrolagens < 2:
             rerrolagens = rerrolagens + 1
             dados_rolados = rolar_dados(len(dados_rolados))
         else:
             print("Você já usou todas as rerrolagens.")
-    elif escolha == 4:
+    elif escolha == '4':
         imprime_cartela(cartela_de_pontos)
     elif escolha == 0:
         regra = None
@@ -100,6 +94,7 @@ while rodadas<12:
         dados_guardados = []            
     else:
         print("Opção inválida. Tente novamente.")
+        input()
             
 
 
