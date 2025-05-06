@@ -29,12 +29,16 @@ while rodadas<12:
     escolha = input()
     if escolha.isdigit():
         escolha = int(escolha)
+    else:
+        continue
 
     if escolha == 1:
         print("Digite o índice do dado a ser guardado (0 a 4):")
         indice = input()
         if indice.isdigit():
             indice = int(indice)
+        else:
+            continue
         if indice < len(dados_rolados):
             dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
 
@@ -43,6 +47,8 @@ while rodadas<12:
         indice = input()
         if indice.isdigit():
             indice = int(indice)
+        else:
+            continue
         if indice < len(dados_guardados):
             dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
         
@@ -62,6 +68,8 @@ while rodadas<12:
         achou = False
         if combinacao.isdigit():
             combinacao = int(combinacao)
+        else:
+            continue
         for tipo in cartela_de_pontos:
             if combinacao in cartela_de_pontos[tipo]:
                 regra = tipo
