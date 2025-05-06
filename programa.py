@@ -28,10 +28,11 @@ while rodadas<12:
     print(f'Dados guardados: {dados_guardados}')
     print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
     escolha = input()
-    if not escolha.isdigit():
+    if escolha.isdigit():
+        escolha = int(escolha)
+    else:
         print("Opção inválida. Tente novamente.")
         input()
-    escolha = int(escolha)
         
 
     if escolha == 1:
