@@ -74,16 +74,27 @@ while rodadas<12:
         elif combinacao in cartela_de_pontos['regra_avancada']:
             regra = 'regra_avancada'
             achou = True
-        if not achou:
-            print("Combinação inválida. Tente novamente.")
-        elif cartela_de_pontos[regra][combinacao] != -1:
-            print("Essa combinação já foi utilizada.")
-        else:
-            cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
-            rodadas+=1
-            rerrolagens = 0
-            dados_rolados = rolar_dados(5)
-            dados_guardados = []            
+        while not achou or cartela_de_pontos[regra][combinacao] != -1:
+            if not achou:
+                print("Combinação inválida. Tente novamente.")
+            elif cartela_de_pontos[regra][combinacao] != -1:
+                print("Essa combinação já foi utilizada.")
+            combinacao = input()
+            if combinacao.isdigit():
+                combinacao = int(combinacao)
+            if combinacao in cartela_de_pontos['regra_simples']:
+                regra = 'regra_simples'
+                achou = True
+            elif combinacao in cartela_de_pontos['regra_avancada']:
+                regra = 'regra_avancada'
+                achou = True
+            else:
+                achou = False
+        cartela_de_pontos = faz_jogada(dados_totais, combinacao, cartela_de_pontos)
+        rodadas+=1
+        rerrolagens = 0
+        dados_rolados = rolar_dados(5)
+        dados_guardados = []            
     else:
         print("Opção inválida. Tente novamente.")
             
