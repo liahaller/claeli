@@ -26,16 +26,22 @@ while rodadas<12:
     print(f'Dados rolados: {dados_rolados}')
     print(f'Dados guardados: {dados_guardados}')
     print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
-    escolha = int(input())
+    escolha = input()
+    if escolha.isdigit():
+        escolha = int(escolha)
 
     if escolha == 1:
         print("Digite o índice do dado a ser guardado (0 a 4):")
-        indice = int(input())
+        indice = input()
+        if indice.isdigit():
+            indice = int(indice)
         dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
 
     elif escolha == 2:
         print("Digite o índice do dado a ser removido (0 a 4):")
-        indice = int(input())
+        indice = input()
+        if indice.isdigit():
+            indice = int(indice)
         dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
         
     elif escolha == 3:
@@ -52,7 +58,7 @@ while rodadas<12:
         print("Digite a combinação desejada:")
         combinacao = input()
         achou = False
-        if len(combinacao) == 1:
+        if combinacao.isdigit():
             combinacao = int(combinacao)
         for tipo in cartela_de_pontos:
             if combinacao in cartela_de_pontos[tipo]:
