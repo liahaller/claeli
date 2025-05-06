@@ -35,14 +35,16 @@ while rodadas<12:
         indice = input()
         if indice.isdigit():
             indice = int(indice)
-        dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
+        if indice < len(dados_rolados):
+            dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
 
     elif escolha == 2:
         print("Digite o índice do dado a ser removido (0 a 4):")
         indice = input()
         if indice.isdigit():
             indice = int(indice)
-        dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
+        if indice < len(dados_guardados):
+            dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
         
     elif escolha == 3:
         if rerrolagens < 2:
