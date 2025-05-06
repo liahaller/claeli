@@ -31,6 +31,7 @@ while rodadas<12:
     if escolha.isdigit():
         escolha = int(escolha)
     else:
+        print("Opção inválida. Tente novamente.")
         continue
 
     if escolha == 1:
