@@ -64,8 +64,6 @@ while rodadas<12:
         achou = False
         if combinacao.isdigit():
             combinacao = int(combinacao)
-        else:
-            continue
         for tipo in cartela_de_pontos:
             if combinacao in cartela_de_pontos[tipo]:
                 regra = tipo
