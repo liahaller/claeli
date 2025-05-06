@@ -28,7 +28,9 @@ while rodadas<12:
     print(f'Dados guardados: {dados_guardados}')
     print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
     escolha = input()
-
+    while escolha != '0' or escolha != '1' or escolha != '2' or escolha != '3' or escolha != '4':
+        print("Opção inválida. Tente novamente.")
+        escolha = input()
     if escolha == '1':
         print("Digite o índice do dado a ser guardado (0 a 4):")
         indice = input()
@@ -92,8 +94,7 @@ while rodadas<12:
         rerrolagens = 0
         dados_rolados = rolar_dados(5)
         dados_guardados = []            
-    else:
-        print("Opção inválida. Tente novamente.")
+    
             
 
 
