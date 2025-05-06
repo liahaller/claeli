@@ -37,7 +37,7 @@ while rodadas<12:
             indice = int(indice)
         else:
             continue
-        if indice < len(dados_rolados):
+        if 0 <= indice < len(dados_rolados):
             dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
 
     elif escolha == 2:
@@ -46,7 +46,7 @@ while rodadas<12:
             indice = int(indice)
         else:
             continue
-        if indice < len(dados_guardados):
+        if 0 <= indice < len(dados_guardados):
             dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
         
     elif escolha == 3:
