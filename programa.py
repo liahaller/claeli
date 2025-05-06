@@ -64,11 +64,12 @@ while rodadas<12:
         achou = False
         if combinacao.isdigit():
             combinacao = int(combinacao)
-        for tipo in cartela_de_pontos:
-            if combinacao in cartela_de_pontos[tipo]:
-                regra = tipo
-                achou = True
-                break
+        if combinacao in cartela_de_pontos['regra_simples']:
+            regra = 'regra_simples'
+            achou = True
+        elif combinacao in cartela_de_pontos['regra_avancada']:
+            regra = 'regra_avancada'
+            achou = True
         if not achou:
             print("Combinação inválida. Tente novamente.")
         elif cartela_de_pontos[regra][combinacao] != -1:
