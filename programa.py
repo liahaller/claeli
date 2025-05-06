@@ -59,7 +59,7 @@ while rodadas<12:
             print("Você já usou todas as rerrolagens.")
     elif escolha == '4':
         imprime_cartela(cartela_de_pontos)
-    elif escolha == 0:
+    elif escolha == '0':
         regra = None
         dados_totais = dados_guardados + dados_rolados
         print("Digite a combinação desejada:")
